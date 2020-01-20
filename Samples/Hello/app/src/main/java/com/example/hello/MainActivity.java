@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButton1Clicked(View view) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http:m.naver.com"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-4939-2819"));
+        startActivity(myIntent);
     }
 
     public void onButton2Clicked(View view) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-6448-1235"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http:m.naver.com"));
+        startActivity(myIntent);
     }
 }
