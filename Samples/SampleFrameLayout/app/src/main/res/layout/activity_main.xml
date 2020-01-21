@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButton1Clicked"
-        android:text="Button" />
+        android:text="다른 이미지 보여주기" />
 
     <FrameLayout
         android:layout_width="match_parent"

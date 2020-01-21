@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     BitmapDrawable bitmap;
     Boolean image1_displayed = false;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
