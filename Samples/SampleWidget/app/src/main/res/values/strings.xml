@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleWidget</string>
+    <string name="greeting">안녕하세요!</string>
+    <string name="my_confession">God is good all the time!</string>
+    <string name="allday">하루 종일</string>
+    <string name="favorite_car">Select your favorite to drive ... </string>
+    <string name="car1">Genesis</string>
+    <string name="car2">Mustang</string>
+    <string name="car3">Lamborghini</string>
+    <string name="car4">Bentley</string>
+</resources>
