@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.r0adkll.slidr.Slidr;
 
 import static com.example.activity.MainActivity.TO_UPPER;
 
@@ -36,8 +39,19 @@ public class Activity2 extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra(TO_UPPER, sending);
                 setResult(RESULT_OK, intent);
+                Log.d("Hustar", "about to finish in button");
                 finish();
+                Log.d("Hustar", "finished at button");
+                // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
     }
+
+    /*
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    */
 }
