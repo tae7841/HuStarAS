@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(TO_UPPER, editText.getText().toString());
                 // startActivity(intent);
                 startActivityForResult(intent, REQUEST_CODE);
-                // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }

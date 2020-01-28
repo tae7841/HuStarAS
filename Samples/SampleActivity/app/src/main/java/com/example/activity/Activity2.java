@@ -39,19 +39,20 @@ public class Activity2 extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra(TO_UPPER, sending);
                 setResult(RESULT_OK, intent);
-                Log.d("Hustar", "about to finish in button");
+                Log.d("Hustar", ">button to finish");
                 finish();
-                Log.d("Hustar", "finished at button");
                 // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                Log.d("Hustar", "<finished at button");
             }
         });
     }
-
-    /*
+/*
     @Override
     public void finish() {
+        Log.d("Hustar", ">finish override");
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        Log.d("Hustar", "<finished override");
     }
-    */
+ */
 }
