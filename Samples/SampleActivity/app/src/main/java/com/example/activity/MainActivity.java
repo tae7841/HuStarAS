@@ -12,26 +12,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int REQUEST_CODE_MENU = 101;
-    Button button;
+    final static String TO_UPPER = "toUpperService";
+    final static int REQUEST_CODE = 101;
     EditText editText;
-    TextView textView2;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
-        textView2 = findViewById(R.id.textView2);
+        textView = findViewById(R.id.textView);
+        Button button = findViewById(R.id.button);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Activity2.class);
-                intent.putExtra("toUpperService", editText.getText().toString());
-                startActivityForResult(intent, REQUEST_CODE_MENU);
+                intent.putExtra(TO_UPPER, editText.getText().toString());
+                // startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
     }
@@ -40,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CODE_MENU) {
-            Toast.makeText(getApplicationContext(), "requestCode: "
-                    + requestCode + ", ResultCode: " + resultCode, Toast.LENGTH_LONG).show();
+        if (requestCode == REQUEST_CODE) {
+            Toast.makeText(getApplicationContext(),
+                    "RequestCode:" + requestCode + "resultCode: " + resultCode,
+                    Toast.LENGTH_LONG).show();
 
             if (resultCode == RESULT_OK) {
-                String item = data.getStringExtra("toUpperService");
-                textView2.setText("Received: " + item);
+                String item = data.getStringExtra(TO_UPPER);
+                textView.setText("Received: " + item);
             }
         }
     }
 }
-

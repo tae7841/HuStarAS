@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.activity.Activity2"
-            android:label="Activity2"
-            android:parentActivityName="com.example.activity.MainActivity">
+        <activity android:name=".Activity2"
+            android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name="com.example.activity.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +22,3 @@
     </application>
 
 </manifest>
-
-
-
-
