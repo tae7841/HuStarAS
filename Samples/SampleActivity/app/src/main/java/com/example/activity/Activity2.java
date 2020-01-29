@@ -22,6 +22,10 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
 
+
+        Slidr.attach(this);
+
+
         TextView textView = findViewById(R.id.textView);
         TextView textView2 = findViewById(R.id.textView2);
         Button button = findViewById(R.id.button);
@@ -39,14 +43,13 @@ public class Activity2 extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra(TO_UPPER, sending);
                 setResult(RESULT_OK, intent);
-                Log.d("Hustar", ">button to finish");
                 finish();
                 // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                Log.d("Hustar", "<finished at button");
             }
         });
     }
-/*
+
+    /*
     @Override
     public void finish() {
         Log.d("Hustar", ">finish override");
@@ -54,5 +57,5 @@ public class Activity2 extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         Log.d("Hustar", "<finished override");
     }
- */
+    */
 }
