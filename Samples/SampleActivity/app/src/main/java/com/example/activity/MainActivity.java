@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(HUSTAR, ">onResume<");
+        Log.d(HUSTAR, ">onPause<");
     }
 
     @Override
