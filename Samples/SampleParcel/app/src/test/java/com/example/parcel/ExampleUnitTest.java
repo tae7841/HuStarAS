@@ -1,4 +1,4 @@
-package com.example.activity;
+package com.example.parcel;
 
 import org.junit.Test;
 

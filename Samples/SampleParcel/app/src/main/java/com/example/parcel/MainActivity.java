@@ -1,4 +1,4 @@
-package com.example.activity;
+package com.example.parcel;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,14 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.r0adkll.slidr.Slidr;
-
 public class MainActivity extends AppCompatActivity {
     final static String TO_UPPER = "toUpperService";
     final static int REQUEST_CODE = 101;
     final static String HUSTAR = "Hustar";
     EditText editText;
     TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Activity2.class);
-                intent.putExtra(TO_UPPER, editText.getText().toString());
+
+                BookData book = new BookData(editText.getText().toString(), 1000);
+                intent.putExtra(TO_UPPER, book);
+
                 // startActivity(intent);
                 startActivityForResult(intent, REQUEST_CODE);
                 // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -78,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
 
             if (resultCode == RESULT_OK) {
-                String item = data.getStringExtra(TO_UPPER);
-                textView.setText("Received: " + item);
+                Bundle bundle = data.getExtras();
+                BookData book = bundle.getParcelable(TO_UPPER);
+                textView.setText("Received: " + book.getTitle() + " " + book.getPrice());
             }
         }
     }

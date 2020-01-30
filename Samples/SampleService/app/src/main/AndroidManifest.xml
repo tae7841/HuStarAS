@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.parcel">
+    package="com.example.service">
 
     <application
         android:allowBackup="true"
@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.parcel.Activity2"
-            android:theme="@style/AppTheme.JoyActivitySlider"
-            android:parentActivityName="com.example.parcel.MainActivity">
-        </activity>
-        <activity android:name="com.example.parcel.MainActivity">
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

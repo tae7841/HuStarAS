@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='SampleActivity'
+rootProject.name='SampleParcel'
