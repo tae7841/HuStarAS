@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,7 +24,10 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 
+import static android.util.Log.*;
+
 public class MainActivity extends AppCompatActivity implements AutoPermissionsListener {
+    public static final String TAG = "Hustar";
     ImageView imageView;
     File file;
 
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
         String filename = "capture.jpg";
         File storageDir = Environment.getExternalStorageDirectory();
         File outFile = new File(storageDir, filename);
-
+        d(TAG, " createFile:" + Environment.getExternalStorageDirectory().getPath());
         return outFile;
     }
 
@@ -74,8 +78,9 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 8;
             Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-
+            d(TAG, " bitmap found at: " + file.getAbsolutePath());
             imageView.setImageBitmap(bitmap);
+            d(TAG, " bitmap displayed at imageView");
         }
     }
 
