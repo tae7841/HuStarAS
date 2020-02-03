@@ -10,8 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-
     private static final int timer = 10;
+
     private volatile boolean stopThread;
     EditText editText;
     Button button_start;
@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stopThread = true;
-                Log.d(TAG, "onClick: stop");
+
+                Log.d(TAG, "onClick: ");
+
                 if (Integer.parseInt(editText.getText().toString()) == 0)
                     editText.setText("" + timer);
                 button_stop.setEnabled(false);
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class SampleThread extends Thread {
-        int seconds;
+        private int seconds;
 
         public SampleThread(int timer) {
             this.seconds = timer;
