@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SampleThreadTimer</string>
+    <string name="startthread">Start Thread</string>
+    <string name="stopthread">Stop Thread</string>
+</resources>
