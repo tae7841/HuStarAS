@@ -35,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
         adapter = new BookAdapter(this, getAllItems());
         recyclerView.setAdapter(adapter);
 
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                removeItem((long) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
+
         editTextTitle = findViewById(R.id.edittext_title);
         textViewCount = findViewById(R.id.textview_count);
         Button buttonIncrease = findViewById(R.id.button_increase);
@@ -98,5 +111,11 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 BookContract.BookEntry.COLUMN_TIMESTAMP + " DESC"
         );
+    }
+
+    private void removeItem(long id) {
+        database.delete(BookContract.BookEntry.TABLE_NAME,
+                BookContract.BookEntry._ID + "=" + id, null);
+        adapter.swapCursor(getAllItems());
     }
 }

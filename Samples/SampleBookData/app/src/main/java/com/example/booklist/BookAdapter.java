@@ -47,9 +47,11 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
         String title = cursor.getString(cursor.getColumnIndex(BookContract.BookEntry.COLUMN_TITLE));
         int amount = cursor.getInt(cursor.getColumnIndex(BookContract.BookEntry.COLUMN_AMOUNT));
+        long id = cursor.getLong(cursor.getColumnIndex(BookContract.BookEntry._ID));
 
         holder.titleText.setText(title);
         holder.countText.setText(String.valueOf(amount));
+        holder.itemView.setTag(id);
     }
 
     @Override
