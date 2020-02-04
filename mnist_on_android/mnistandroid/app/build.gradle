@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "mariannelinhares.mnistandroid"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -19,7 +19,7 @@ android {
 }
 
 def var = dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'org.tensorflow:tensorflow-android:1.2.0-rc0'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'org.tensorflow:tensorflow-android:1.2.0-rc0'
 }
-var
+
