@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">SampleBindService</string>
-    <string name="start_service">Start Service</string>
-    <string name="end_service">End Service</string>
-    <string name="check_number">Check Number</string>
-    <string name="second_activity">Second Activity</string>
-    <string name="default_value">연결된 서비스 없음</string>
-    <string name="main_activity">Main Activity</string>
-</resources>
