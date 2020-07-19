@@ -1,4 +1,0 @@
-#Tue Feb 04 14:11:48 KST 2020
-base.0=C\:\\GitHub\\HuStar-AS\\mnist_on_android\\mnistandroid\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
