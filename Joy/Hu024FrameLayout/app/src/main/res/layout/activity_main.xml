@@ -41,5 +41,12 @@
             android:visibility="invisible"
             app:srcCompat="@drawable/alexhonnold2" />
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/image01" />
+
     </FrameLayout>
 </LinearLayout>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "org.joy.tablelayout"
+        applicationId "org.joy.layout"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
