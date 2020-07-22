@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter a name"
         android:inputType="textPersonName"
@@ -22,8 +23,8 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter a password"
         android:inputType="textPersonName|textPassword"
@@ -34,8 +35,8 @@
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter an email"
         android:inputType="textPersonName|textEmailAddress"
@@ -44,34 +45,31 @@
 
     <ImageButton
         android:id="@+id/imageButtonClear"
-        android:layout_width="150dp"
+        android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
         android:background="@android:color/background_light"
-        android:scaleType="centerInside"
+        android:scaleType="fitStart"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonSubmit"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:srcCompat="@drawable/cleared" />
+        app:srcCompat="@drawable/checked" />
 
     <ImageButton
         android:id="@+id/imageButtonSubmit"
-        android:layout_width="150dp"
+        android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
         android:background="@android:color/background_light"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:scaleType="fitStart"
         app:layout_constraintStart_toEndOf="@+id/imageButtonClear"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:srcCompat="@drawable/checked" />
+        app:srcCompat="@drawable/cleared" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

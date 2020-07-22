@@ -20,34 +20,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup = findViewById(R.id.radioGroup);
         checkBox = findViewById(R.id.checkBox);
         textView2 = findViewById(R.id.textView2);
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 show_message();
             }
         });
 
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 show_message();
             }
-        }) ;
-        show_message();
-        Log.d("HuStar", "><onCreate()");
+        });
     }
 
     public void show_message() {
-        Log.d("HuStar", ">show_message()");
         int radioId = radioGroup.getCheckedRadioButtonId();
         RadioButton radioButton = findViewById(radioId);
 
-        String msg = "Your choice: " + (String) radioButton.getText();
-        if (checkBox.isChecked()) msg += " " + checkBox.getText();
+        String msg = "Your Choice: " + radioButton.getText().toString();
+        if (checkBox.isChecked()) msg += " " + checkBox.getText().toString();
         textView2.setText(msg);
-        Log.d("HuStar", "<show_message:" + msg);
     }
 }

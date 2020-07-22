@@ -11,25 +11,28 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button submit;
     EditText name, password, email;
+    Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        name = (EditText) findViewById(R.id.editText1);
-        password = (EditText) findViewById(R.id.editText2);
-        email = (EditText) findViewById(R.id.editText3);
+        name = findViewById(R.id.editText1);
+        password = findViewById(R.id.editText2);
+        email = findViewById(R.id.editText3);
+
         name.setSelectAllOnFocus(true);
         password.setSelectAllOnFocus(true);
         email.setSelectAllOnFocus(true);
 
-        submit = (Button) findViewById(R.id.button);
+        submit = findViewById(R.id.button);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                closeKeyboard();
                 show_message();
             }
         });
@@ -37,25 +40,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void show_message() {
         String msg = "";
-        if (name.getText().toString().isEmpty()) msg += "Enter a name; ";
-        if (password.getText().toString().isEmpty()) msg += "Enter a password; ";
-        if (email.getText().toString().isEmpty()) msg += "Enter an email;";
+
+        if (name.getText().toString().isEmpty()) msg += "Enter a name: \n";
+        if (password.getText().toString().isEmpty()) msg += "Enter a password: \n";
+        if (email.getText().toString().isEmpty()) msg += "Enter an email: ";
 
         if (msg.length() != 0) {
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "Name: " + name.getText().toString()
-                            + " \n" + "Password: " + password.getText().toString()
-                            + " \n" + "Email: " + email.getText().toString(),
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
         }
-        closeKeyboard();
+        else {
+            Toast.makeText(this, "Name: " + name.getText().toString() +
+                    "\nPassword: " + password.getText().toString() +
+                    "\nemail: " + email.getText().toString(), Toast.LENGTH_LONG).show();
+        }
     }
 
     private void closeKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager imm =
+                    (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
