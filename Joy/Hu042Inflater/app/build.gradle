@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "org.joy.inflater"
+        applicationId "org.techtown.inflater"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -18,6 +18,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

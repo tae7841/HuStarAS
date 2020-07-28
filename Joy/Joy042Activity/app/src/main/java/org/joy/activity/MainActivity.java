@@ -1,5 +1,6 @@
 package org.joy.activity;
 
+import androidx.annotation.LongDef;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "MainActivity");
 
         Button button = findViewById(R.id.button);
         Button button2 = findViewById(R.id.button2);
@@ -35,17 +37,25 @@ public class MainActivity extends AppCompatActivity {
                 sendMessage(view);
             }
         });
-
     }
 
-    /** Called when the user taps the Send button 1 */
+    /** Called when the user taps the Send button */
+    /*
     public void sendMessage(View view) {
-        Log.d(TAG, ">sendMessage");
+        Log.d("HuStar", ">sendMessage");
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = findViewById(R.id.editText);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+        Log.d("HuStar", "<sendMessage");
+    }
+    */
 
+    private String getMessage(View v) {
+        // EditText et = new EditText(this);
         EditText et = null;
-        switch(view.getId()) {
+        switch(v.getId()) {
             case R.id.button:
                 et = findViewById(R.id.editText);
                 break;
@@ -53,10 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 et = findViewById(R.id.editText2);
                 break;
             default:
-                break;
+                return "";
         }
+        return et.getText().toString();
+    }
 
-        intent.putExtra(EXTRA_MESSAGE, et.getText().toString());
+    public void sendMessage(View view) {
+        Log.d(TAG, ">sendMessage");
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, getMessage(view));
         startActivity(intent);
         Log.d(TAG, "<sendMessage");
     }
