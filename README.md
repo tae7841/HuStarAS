@@ -38,39 +38,50 @@
       - 안드로이드 이해하기
       - 안스(Android Studio)와 Java SDE 설치
       -	안드로이드 첫 앱 만들기(Hello World)
-  - 2차시 안스 다루기
       -	여러 개 버튼 추가하기
       -	단말 연결과 설정
-  - 3차시 - View and Layouts
+  - 2차시 - View and Layouts
       -	뷰와 뷰의 크기 속성 이해하기
       -	레이아웃 기초와 대표적 레이아웃 익히기
-  - 4차시 - View and Layouts
       - 제약,프레임 레이아웃, 뷰 전환
       -	스크롤 뷰 사용하기
-  - 5차시 - Widgets and Drawable
+  - 3차시 - Widgets and Drawable
       -	기본 위젯 드로어불 소개
       -	드로어블 만들기
       -	이벤트 처리하기
       -	프로그래스 바 사용하기
-  - 6차시 - Activities & Fragment
-      -	여러 화면 생성 및 화면간 전환하기
-      -	레이아웃 인플레이션
-      -	인텐트, 프래그멘트
-  - 7차시 - Services and Receivers
-      - 서비스와 수신자 이해하기
+  - 4차시 - 여러 화면 전환하기 
+      -	레이아웃 인플레이션 이해하기
+      -	여러 화면 만들기, 전환하기
+      -	인텐트 살펴보기
+      -	플래그와 부가 데이터
+  - 5차시 - 프래그먼트 이해하기
+      - 프래그먼트로 화면 만들기
+      -	액션바 사용하기
+      - 상단 탭과 하단 탭 만들기
+  - 6차시 선택 위젯(Widget) 만들기
+      -	NinePatch이미지
+      -	새로운 뷰 만들기
+      -	Recycling View 만들기
+  - 7차시 - 서비스와 수신자 이해하기
       -	브로드캐스트 수신자
       -	위험 권한 부여하기
       -	리소스와 매니페스트, 그래들의 이해
-  - 8차시 - Multimedia and Location Services
-      - 사진 찍기 (콘텐트 프로바이더 사용)
-      -	사진 찍기 (미리 보기로 직접 찍기)
+  - 8차시 - Location Services
       - Location Services
       -	GPS로 나의 위치 확인하기
       -	나의 위치의 지도 보여 주기
-  - 9차시 - Thread, Handler and Networking
+  - 9차시 - Presentation
+      - 오픈 소스 앱 프로젝트
+  - (10차시) // not scheduled in this term
+      Thread, Handler and Networking
       -	쓰레드와 핸들러 이해하기
       -	쓰레드로 메시지 전송하기
       -	네트워킹과 소켓 사용하기
       -	JSON 데이터 다루기
-  - 10차시 - Presentation
-      - 오픈 소스 앱 프로젝트
+
+Happy Coding!  
+God is good all the time~  
+
+idebtor@gmail.com 
+(a debtor)<><
