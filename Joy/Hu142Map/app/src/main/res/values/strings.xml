@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Hu142Map</string>
-    <string name="title_location_permission">Location Permission Requested</string>
-    <string name="text_location_permission">Your permission requested for Location Services</string>
-    <string name="ok">OK</string>
-</resources>
