@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hu011Hello</string>
+    <string name="greet">인사합시다</string>
+    <string name="naver">네이버</string>
+    <string name="calling">전화걸기</string>
+    <string name="hello">안녕</string>
+</resources>
