@@ -1,0 +1,2 @@
+rootProject.name = "Joy011Layout"
+include ':app'

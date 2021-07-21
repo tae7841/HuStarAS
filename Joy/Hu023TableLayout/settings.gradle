@@ -1,0 +1,2 @@
+rootProject.name = "Hu023TableLayout"
+include ':app'

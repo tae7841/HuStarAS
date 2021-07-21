@@ -1,0 +1,2 @@
+rootProject.name = "Hu024FrameLayout"
+include ':app'
