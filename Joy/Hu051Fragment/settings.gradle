@@ -1,0 +1,2 @@
+rootProject.name = "Hu051Fragment"
+include ':app'

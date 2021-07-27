@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hu043ActivityThree</string>
+    <string name="openActivity2">Activity2로 가기</string>
+    <string name="openActivityMain">ActivityMain으로 가기</string>
+    <string name="prepared">Prepared</string>
+    <string name="received">Received</string>
+    <string name="lowercase">lowercase</string>
+</resources>

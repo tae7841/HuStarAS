@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hu0310PlaceHolder</string>
+    <string name="truck">truck</string>
+    <string name="bike">bike</string>
+    <string name="bus">bus</string>
+    <string name="flight">flight</string>
+    <string name="taxi">taxi</string>
+</resources>

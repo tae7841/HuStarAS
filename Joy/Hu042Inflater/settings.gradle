@@ -1,0 +1,2 @@
+rootProject.name = "Hu042Inflater"
+include ':app'
