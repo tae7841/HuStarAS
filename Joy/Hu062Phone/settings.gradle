@@ -1,0 +1,2 @@
+rootProject.name = "Hu062Phone"
+include ':app'
