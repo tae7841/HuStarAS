@@ -43,7 +43,7 @@
             android:paddingEnd="@dimen/padding_normal"
             android:paddingBottom="@dimen/padding_small"
             android:text="@{data.author}"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:transitionName="@{@string/transition_author + data.id}" />
     </FrameLayout>
 </layout>

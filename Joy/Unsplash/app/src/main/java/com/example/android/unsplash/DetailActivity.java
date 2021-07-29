@@ -121,7 +121,13 @@ public class DetailActivity extends Activity {
     }
 
     private void setActivityResult() {
-        // your code here
+        if (initialItem == viewPager.getCurrentItem()) {
+            setResult(RESULT_OK);
+            return;
+        }
+        Intent intent = new Intent();
+        intent.putExtra(IntentUtil.SELECTED_ITEM_POSITION, viewPager.getCurrentItem());
+        setResult(RESULT_OK, intent);
     }
 
 }

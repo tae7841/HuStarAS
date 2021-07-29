@@ -52,7 +52,7 @@ import retrofit.client.Response;
 
 public class MainActivity extends Activity {
 
-    private final int PHOTO_COUNT = 4;
+    private final int PHOTO_COUNT = 12;
     private static final String TAG = "MainActivity";
 
     private final Transition.TransitionListener sharedExitListener =
@@ -78,6 +78,9 @@ public class MainActivity extends Activity {
         if (savedInstanceState != null) {
             relevantPhotos = savedInstanceState.getParcelableArrayList(IntentUtil.RELEVANT_PHOTOS);
         }
+
+        setupRecyclerView();
+
         displayData();
     }
 
@@ -108,7 +111,20 @@ public class MainActivity extends Activity {
 
     private void populateGrid() {
         grid.setAdapter(new PhotoAdapter(this, relevantPhotos));
-        // your code here
+        grid.addOnItemTouchListener(new OnItemSelectedListener(MainActivity.this) {
+            @Override
+            public void onItemSelected(RecyclerView.ViewHolder holder, int position) {
+                if (!(holder instanceof PhotoViewHolder)) {
+                    return;
+                }
+                PhotoItemBinding binding = ((PhotoViewHolder) holder).getBinding();
+                final Intent intent = getDetailActivityStartIntent(MainActivity.this,
+                        relevantPhotos, position, binding);
+                final ActivityOptions activityOptions = getActivityOptions(binding);
+                MainActivity.this.startActivityForResult(intent, IntentUtil.REQUEST_CODE,
+                        activityOptions.toBundle());
+            }
+        });
         empty.setVisibility(View.GONE);
     }
 
@@ -151,17 +167,34 @@ public class MainActivity extends Activity {
     }
 
     private void setupRecyclerView() {
-        // your code here
-        grid.addItemDecoration(new GridMarginDecoration(
-                getResources().getDimensionPixelSize(R.dimen.grid_item_spacing)));
+        GridLayoutManager gridLayoutManager = (GridLayoutManager) grid.getLayoutManager();
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                /* emulating https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0B6Okdz75tqQsck9lUkgxNVZza1U/style_imagery_integration_scale1.png */
+                switch (position % 6) {
+                    case 5:
+                        return 3;
+                    case 3:
+                        return 2;
+                    default:
+                        return 1;
+                }
+            }
+        });
+        grid.addItemDecoration(new GridMarginDecoration(   getResources().getDimensionPixelSize(R.dimen.grid_item_spacing)));
         grid.setHasFixedSize(true);
-
     }
 
     @NonNull
     private static Intent getDetailActivityStartIntent(Activity host, ArrayList<Photo> photos,
                                                        int position, PhotoItemBinding binding) {
-        // your code here
+        final Intent intent = new Intent(host, DetailActivity.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.putParcelableArrayListExtra(IntentUtil.PHOTO, photos);
+        intent.putExtra(IntentUtil.SELECTED_ITEM_POSITION, position);
+        intent.putExtra(IntentUtil.FONT_SIZE, binding.author.getTextSize());
+
         intent.putExtra(IntentUtil.PADDING,
                 new Rect(binding.author.getPaddingLeft(),
                         binding.author.getPaddingTop(),
